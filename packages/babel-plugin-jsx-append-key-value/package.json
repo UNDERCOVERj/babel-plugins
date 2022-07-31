@@ -1,0 +1,17 @@
+{
+  "name": "babel-plugin-jsx-append-key-value",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "scripts": {
+    "build": "nx build",
+    "test": "nx test"
+  },
+  "dependencies": {
+    "@babel/types": "^7.18.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/traverse": "^7.18.9"
+  }
+}

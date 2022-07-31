@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "nx test babel-plugin-jsx-append-key-value",
+      "name": "[babel-plugin-jsx-append-key-value] test",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+  ]
+}

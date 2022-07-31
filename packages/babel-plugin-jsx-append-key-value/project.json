@@ -1,0 +1,47 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/babel-plugin-jsx-append-key-value/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/babel-plugin-jsx-append-key-value",
+        "main": "packages/babel-plugin-jsx-append-key-value/src/index.ts",
+        "tsConfig": "packages/babel-plugin-jsx-append-key-value/tsconfig.lib.json",
+        "assets": ["packages/babel-plugin-jsx-append-key-value/*.md"]
+      }
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs babel-plugin-jsx-append-key-value {args.ver} {args.tag}"
+      },
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "build"
+        }
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/babel-plugin-jsx-append-key-value/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/babel-plugin-jsx-append-key-value"],
+      "options": {
+        "jestConfig": "packages/babel-plugin-jsx-append-key-value/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
