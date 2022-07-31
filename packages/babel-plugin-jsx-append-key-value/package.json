@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-jsx-append-key-value",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "commonjs",
   "repository": {
     "type": "git",
