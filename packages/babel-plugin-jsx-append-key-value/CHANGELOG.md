@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.1.7](https://github.com/UNDERCOVERj/babel-plugins/compare/babel-plugin-jsx-append-key-value-0.1.6...babel-plugin-jsx-append-key-value-0.1.7) (2022-07-31)
+
 ### [0.1.6](https://github.com/UNDERCOVERj/babel-plugins/compare/babel-plugin-jsx-append-key-value-0.1.5...babel-plugin-jsx-append-key-value-0.1.6) (2022-07-31)
 
 ### [0.1.5](https://github.com/UNDERCOVERj/babel-plugins/compare/babel-plugin-jsx-append-key-value-0.1.4...babel-plugin-jsx-append-key-value-0.1.5) (2022-07-31)
