@@ -6,3 +6,10 @@ Various modules to help leverage babel in all sort so places
 
 - ### [babel-plugin-jsx-append-key-value](./packages/babel-plugin-jsx-append-key-value/README.md)
   - append k-v to react component
+
+# release command
+
+```
+nx build my-project
+nx run workspace:version
+```

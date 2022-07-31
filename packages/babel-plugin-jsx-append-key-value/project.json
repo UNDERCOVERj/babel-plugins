@@ -41,6 +41,12 @@
         "jestConfig": "packages/babel-plugin-jsx-append-key-value/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
+      }
     }
   },
   "tags": []
