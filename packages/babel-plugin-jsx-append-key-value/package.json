@@ -1,7 +1,12 @@
 {
   "name": "babel-plugin-jsx-append-key-value",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UNDERCOVERj/babel-plugins.git",
+    "directory": "packages/babel-plugin-jsx-append-key-value"
+  },
   "scripts": {
     "build": "nx build",
     "test": "nx test"

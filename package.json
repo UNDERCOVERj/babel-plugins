@@ -2,6 +2,10 @@
   "name": "babel-plugins",
   "version": "0.0.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UNDERCOVERj/babel-plugins.git"
+  },
   "scripts": {
     "prepare": "husky install"
   },
