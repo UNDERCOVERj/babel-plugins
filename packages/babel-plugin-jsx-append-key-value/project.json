@@ -13,17 +13,18 @@
         "assets": ["packages/babel-plugin-jsx-append-key-value/*.md"]
       }
     },
-    "publish": {
-      "executor": "@nrwl/workspace:run-commands",
+    "github": {
+      "executor": "@jscutlery/semver:github",
       "options": {
-        "command": "node tools/scripts/publish.mjs babel-plugin-jsx-append-key-value {args.ver} {args.tag}"
-      },
-      "dependsOn": [
-        {
-          "projects": "self",
-          "target": "build"
-        }
-      ]
+        "tag": "${tag}",
+        "notes": "${notes}"
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -45,7 +46,14 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "preset": "conventional"
+        "preset": "conventional",
+        "postTargets": ["babel-plugin-jsx-append-key-value:publish", "babel-plugin-jsx-append-key-value:github"]
+      }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
       }
     }
   },

@@ -11,5 +11,6 @@ Various modules to help leverage babel in all sort so places
 
 ```
 nx build my-project
-nx run workspace:version
+nx version my-project
+nx publish my-project --ver=xxx
 ```
