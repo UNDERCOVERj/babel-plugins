@@ -31,7 +31,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "packages/babel-plugin-jsx-append-key-value/**/*.ts"
+          "packages/babel-plugin-jsx-append-key-value/**/*.ts",
+          "packages/babel-plugin-jsx-append-key-value/**/*.spec.ts"
         ]
       }
     },
@@ -47,7 +48,10 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "postTargets": ["babel-plugin-jsx-append-key-value:publish", "babel-plugin-jsx-append-key-value:github"]
+        "postTargets": [
+          "babel-plugin-jsx-append-key-value:publish",
+          "babel-plugin-jsx-append-key-value:github"
+        ]
       }
     },
     "deploy": {

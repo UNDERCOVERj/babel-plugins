@@ -3,16 +3,15 @@ import * as babel from '@babel/core';
 
 describe('babelPluginJsxAppendKeyValue', () => {
   it('should work', () => {
-    const result = babel.transform("code;", {
-      plugins: [babelPluginJsxAppendKeyValue]
+    const result = babel.transform('code;', {
+      plugins: [babelPluginJsxAppendKeyValue],
     });
-    expect(result?.code).toEqual(
-      'code;'
-    );
+    expect(result?.code).toEqual('code;');
   });
 
   it('should return appended syntax', () => {
-    const result = babel.transform(`
+    const result = babel.transform(
+      `
       import React from 'react';
       import { Button, Switch } from 'antd';
 
@@ -23,33 +22,36 @@ describe('babelPluginJsxAppendKeyValue', () => {
           <Switch />
         </div>
       }
-    `, {
-      plugins: [
-        [
-          babelPluginJsxAppendKeyValue,
-          {
-            options: [
-              {
-                libraryName: 'antd',
-                appendKvArray: [
-                  {
-                    componentName: 'Button',
-                    skipKeys: ['type', 'plain'],
-                    kvsMap: new Map([['plain', false]]),
-                  },
-                  {
-                    componentName: 'Switch',
-                    kvsMap: new Map([['checked', true]])
-                  }
-                ],
-              },
-            ],
-          }
-        ]
-      ],
-      presets: ["@babel/preset-react"]
-    });
-    expect(result?.code?.replace(/\s/g, '')).toMatch(`
+    `,
+      {
+        plugins: [
+          [
+            babelPluginJsxAppendKeyValue,
+            {
+              options: [
+                {
+                  libraryName: 'antd',
+                  appendKvArray: [
+                    {
+                      componentName: 'Button',
+                      skipKeys: ['type', 'plain'],
+                      kvsMap: new Map([['plain', false]]),
+                    },
+                    {
+                      componentName: 'Switch',
+                      kvsMap: new Map([['checked', true]]),
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        ],
+        presets: ['@babel/preset-react'],
+      },
+    );
+    expect(result?.code?.replace(/\s/g, '')).toMatch(
+      `
     import React from 'react';
     import { Button, Switch } from 'antd';
     export function Test() {
@@ -61,6 +63,7 @@ describe('babelPluginJsxAppendKeyValue', () => {
         checked: true
       }));
     }
-    `.replace(/\s/g, ''));
-  })
+    `.replace(/\s/g, ''),
+    );
+  });
 });
