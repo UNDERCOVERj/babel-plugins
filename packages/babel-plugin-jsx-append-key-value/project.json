@@ -17,7 +17,7 @@
       "executor": "@jscutlery/semver:github",
       "options": {
         "tag": "${tag}",
-        "notesFile": "./CHANGELOG.md"
+        "notesFile": "./packages/babel-plugin-jsx-append-key-value/CHANGELOG.md"
       }
     },
     "publish": {
