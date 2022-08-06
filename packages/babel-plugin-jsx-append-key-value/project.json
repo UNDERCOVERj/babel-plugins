@@ -8,7 +8,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/babel-plugin-jsx-append-key-value",
-        "main": "packages/babel-plugin-jsx-append-key-value/src/index.ts",
+        "main": "packages/babel-plugin-jsx-append-key-value/index.ts",
         "tsConfig": "packages/babel-plugin-jsx-append-key-value/tsconfig.lib.json",
         "assets": ["packages/babel-plugin-jsx-append-key-value/*.md"]
       }
